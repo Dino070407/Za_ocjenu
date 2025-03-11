@@ -1,0 +1,23 @@
+<div class="text-2xl mb-4 font-semibold">Dodavanje sobe</div>
+
+<form method="post" action="/rooms/create" class="grid grid-cols-1 max-w-md gap-2">
+    <label for="name">Ime</label>
+    <input type="text" name="name" minlength="3" maxlength="100" required="" />
+    
+    <input type="submit" value="Potvrdi"
+        class="w-full p-2 bg-blue-600 text-white hover:bg-blue-800 rounded cursor-pointer" />
+    <input type="reset" value="Poništi"
+        class="w-full p-2 bg-slate-500 text-white hover:bg-slate-800 rounded cursor-pointer" />
+</form>
+
+{{#if error_validation}}
+<p>Dogodila se greška u provjeri podataka!</p>
+{{/if}}
+
+{{#if error_database}}
+<p>Dogodila se greška prilikom spremanja u bazu podataka!</p>
+{{/if}}
+
+{{#if success}}
+<p>Soba je uspješno dodana!</p>
+{{/if}}

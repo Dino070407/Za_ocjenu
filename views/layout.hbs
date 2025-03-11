@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{{title}}</title>
+  <link rel='stylesheet' href='/stylesheets/output.css' />
+</head>
+
+<body class="min-h-screen flex flex-col bg-gray">
+
+  <header class="bg-blue-600 text-white p-4">
+    <div class="mx-auto flex flex-wrap items-center">
+      <a href="/">
+        <h1 class="text-xl font-bold flex-none">Planer Zadataka</h1>
+      </a>
+      <div class="flex-1 text-right min-w-52 text-sm">
+        {{#unless userEmail}}
+        <a class="py-1 px-2 bg-white text-blue-600 rounded hover:bg-slate-200" href="/users/signin">Prijava</a>
+        <a class="py-1 px-2 bg-white text-blue-600 rounded hover:bg-slate-200" href="/users/signup">Registracija</a>
+        {{/unless}}
+        {{#if userEmail}}
+        <a class="py-1 px-2 bg-fuchsia-600 text-white rounded hover:bg-fuchsia-400" href="/rooms/create">Stvori sobu</a>
+        <a class="py-1 px-2 bg-white text-blue-600 rounded hover:bg-slate-200" href="/users/signout">Odjava</a>
+        {{/if}}
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow bg-gray p-6">
+    <div class="container mx-auto">
+      {{{body}}}
+    </div>
+  </main>
+
+  <footer class="bg-gray-800 text-white p-4">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2025 Planer Zadataka. Sva prava su od Dine Ivančića.</p>
+    </div>
+  </footer>
+</body>
+
+</html>

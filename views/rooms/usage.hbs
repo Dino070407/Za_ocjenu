@@ -1,0 +1,19 @@
+<a href="/rooms/sign_in/{{room_id}}"
+    class="text-2xl text-center font-bold bg-slate-600 text-white p-2 mb-4 block">Prijavi me</a>
+    
+<div class="grid grid-cols-2 gap-2">
+    <div class="text-lg font-bold bg-slate-300 p-2">Korisnik</div>
+    <div class="text-lg font-bold bg-slate-300 p-2">Vrijeme</div>
+    {{#each items}}
+    <div>
+        {{name}}
+    </div>
+    <div>
+        {{signed_in}}
+    </div>
+    {{/each}}
+</div>
+
+{{#if invalid_id }}
+<p>Nepostojeća soba!</p>
+{{/if}}

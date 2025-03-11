@@ -1,0 +1,22 @@
+<h1 class="text-3xl font-bold mb-6">{{title}}</h1>
+<p class="mb-4">Dobrodošli, <strong>{{user.name}}</strong> ({{user.email}})! 
+  <a href="/users/signout" class="inline-block py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-700">Odjavi se</a>
+</p>
+
+
+<div class="mb-8">
+  <h2 class="text-2xl font-semibold mb-4">Napravite zadatak</h2>
+  <form method="post" action="/users/tasks" class="grid grid-cols-1 max-w-md gap-2">
+    <label for="title">Naslov zadatka</label>
+    <input type="text" name="title" required class="p-2 border rounded" />
+    <label for="description">Opis</label>
+    <textarea name="description" class="p-2 border rounded" rows="4"></textarea>
+    <label for="priority">Prioritet</label>
+    <select name="priority" class="p-2 border rounded" required>
+      <option value="low">Niski</option>
+      <option value="medium">Srednji</option>
+      <option value="high">Visoki</option>
+    </select>
+    <input type="submit" value="Napravite zadatak" class="p-2 bg-blue-600 text-white rounded hover:bg-blue-700" />
+  </form>
+</div>
